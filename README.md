@@ -1,3 +1,8 @@
+
+
+
+This is a mobile responsive calculator built in React
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
