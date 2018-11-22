@@ -31,6 +31,21 @@
   }
 } */
 
-.App{
-  margin: auto;
+body{
+  background: rgb(235, 231, 231);
+}
+
+.calculator{
+margin:auto;
+}
+
+.display{
+  margin:auto;
+  margin-top:10vw;
+  width:20vw;
+  height:5vw;
+  background-color: black;
+  color: azure;
+  text-align: right;
+  font-size: 3vw;
 }
