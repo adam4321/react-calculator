@@ -21,7 +21,7 @@ class App extends Component {
           </a>
         </header> */}
 
-
+<div className='display'>0</div>
         
       </div>
     );
