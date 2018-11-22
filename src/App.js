@@ -2,7 +2,6 @@
 //ts-check
 
 import React, { Component } from 'react';
-// import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -18,10 +17,11 @@ const {displayValue} = this.state
     return (
       <div className='calculator'>
       <div className='display'>{displayValue}</div>
-        
-       <div >
+       <div className='keyArea'>
 
-
+        <button className='key key-clear'>AC</button>
+        <button className='key key-sign'>&plusmn;</button>
+        <button className='key key-percent'>%</button>
 
       </div>
     </div>
