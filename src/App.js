@@ -30,13 +30,13 @@ const {displayValue} = this.state
        <div className='keyArea'>
         <div className='input-keys'>
 
-         <div className='function-keys'>
+         {/* <div className='function-keys'> */}
             <button className='key key-func key-clear'>AC</button>
             <button className='key key-func key-sign'>&plusmn;</button>
             <button className='key key-func key-percent'>%</button>
-        </div>
+        {/* </div> */}
 
-        <div className='digit-keys'>
+        {/* <div className='digit-keys'> */}
             <button className='key key-dig key-0' onClick={() => this.inputDigit(0)}>0</button>
             <button className='key key-dig key-dot'>.</button>
             <button className='key key-dig key-1' onClick={() => this.inputDigit(1)}>1</button>
@@ -48,15 +48,15 @@ const {displayValue} = this.state
             <button className='key key-dig key-7' onClick={() => this.inputDigit(7)}>7</button>
             <button className='key key-dig key-8' onClick={() => this.inputDigit(8)}>8</button>
             <button className='key key-dig key-9' onClick={() => this.inputDigit(9)}>9</button>
-          </div>
+          {/* </div> */}
 
-        <div className='operator-keys'>
+        {/* <div className='operator-keys'> */}
             <button className='key key-oper key-divide'>&#247;</button>
             <button className='key key-oper key-multiply'>x</button>
-            <button className='key key-oper key-minus'>-</button>
+            <button className='key key-oper key-minus'>&minus;</button>
             <button className='key key-oper key-plus'>+</button>
             <button className='key key-oper key-equals'>=</button>
-        </div>
+        {/* </div> */}
         
           
         </div>
