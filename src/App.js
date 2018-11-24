@@ -1,8 +1,12 @@
 
 //ts-check
 
+// Imports
+
 import React, { Component } from 'react';
 import './App.css';
+
+// Beginning of the Calculator
 
 class App extends Component {
 
@@ -10,13 +14,59 @@ state={
   displayValue: '0'
 }
 
-inputDigit(digit){
+// Clear the display
+
+displayClear() {
+  this.setState({
+    displayValue: '0'
+  })
+}
+
+// Attach numbers to the the display
+
+inputDigit(digit) {
   const {displayValue} = this.state
 
+this.setState({
+ displayValue : displayValue === '0' ? String(digit) : displayValue + digit
+  })
+}
+
+// Allow a decimal point
+
+inputDot() {
+  const {displayValue} = this.state
+
+  if(displayValue.indexOf('.') === -1) {
+  this.setState({
+    displayValue: displayValue + '.'
+  })
+ }
+}
+
+// Change the number's sign
+
+changeSign() {
+  const {displayValue} = this.state
 
 this.setState({
- displayValue : String(digit)
+  displayValue: displayValue.charAt(0) === '-' ? displayValue.substr(1) : '-' + displayValue 
+ })
+}
+
+// Percent Sign
+
+percent() {
+  const {displayValue} = this.state
+  const value = parseFloat(displayValue)
+
+  this.setState({
+    displayValue: String(value / 100)
   })
+}
+
+performOperation(operator) {
+
 }
 
 
@@ -31,14 +81,14 @@ const {displayValue} = this.state
         <div className='input-keys'>
 
          {/* <div className='function-keys'> */}
-            <button className='key key-func key-clear'>AC</button>
-            <button className='key key-func key-sign'>&plusmn;</button>
-            <button className='key key-func key-percent'>%</button>
+            <button className='key key-func key-clear' onClick={() => this.displayClear()}>AC</button>
+            <button className='key key-func key-sign' onClick={() => this.changeSign()}>&plusmn;</button>
+            <button className='key key-func key-percent' onClick={() => this.percent()}>%</button>
         {/* </div> */}
 
         {/* <div className='digit-keys'> */}
             <button className='key key-dig key-0' onClick={() => this.inputDigit(0)}>0</button>
-            <button className='key key-dig key-dot'>.</button>
+            <button className='key key-dig key-dot' onClick={() => this.inputDot()}>.</button>
             <button className='key key-dig key-1' onClick={() => this.inputDigit(1)}>1</button>
             <button className='key key-dig key-2' onClick={() => this.inputDigit(2)}>2</button>
             <button className='key key-dig key-3' onClick={() => this.inputDigit(3)}>3</button>
@@ -51,11 +101,11 @@ const {displayValue} = this.state
           {/* </div> */}
 
         {/* <div className='operator-keys'> */}
-            <button className='key key-oper key-divide'>&#247;</button>
-            <button className='key key-oper key-multiply'>x</button>
-            <button className='key key-oper key-minus'>&minus;</button>
-            <button className='key key-oper key-plus'>+</button>
-            <button className='key key-oper key-equals'>=</button>
+            <button className='key key-oper key-divide' onClick={() => this.performOperation('/')}>&#247;</button>
+            <button className='key key-oper key-multiply' onClick={() => this.performOperation('*')}>x</button>
+            <button className='key key-oper key-minus' onClick={() => this.performOperation('-')}>&minus;</button>
+            <button className='key key-oper key-plus' onClick={() => this.performOperation('+')}>+</button>
+            <button className='key key-oper key-equals' onClick={() => this.performOperation('=')}>=</button>
         {/* </div> */}
         
           
