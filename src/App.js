@@ -12,7 +12,7 @@ class AutoShrinkingText extends React.Component {
   state = {
     scale: 1
   };
-componentDidUpdate(){
+componentDidUpdate() {
   
 const {scale} = this.state
 
@@ -161,10 +161,10 @@ const {displayValue} = this.state
 
     return (
       <div className='calculator'>
-      <pre>{JSON.stringify(this.state, null, 2)}</pre>
-      {/* <div className='display'> */}
+      {/* <pre>{JSON.stringify(this.state, null, 2)}</pre> */}
+      <div className='display'>
       <AutoShrinkingText  >{displayValue}</AutoShrinkingText>
-      {/* </div> */}
+      </div>
        <div className='keyArea'>
         <div className='input-keys'>
 
