@@ -40,9 +40,9 @@ return (
     className='auto-scaling-text'
     style={{ transform: `scale(${scale},${scale})`}}
     ref={node => this.node = node}       
-    >{this.props.children}
-  </div>
- )}
+    >{this.props.children}</div>
+  )
+ }
 }
 
 // Beginning of the Calculator
@@ -163,7 +163,7 @@ const {displayValue} = this.state
       <div className='calculator'>
       {/* <pre>{JSON.stringify(this.state, null, 2)}</pre> */}
       <div className='display'>
-      <AutoShrinkingText  >{displayValue}</AutoShrinkingText>
+      <AutoShrinkingText>{displayValue}</AutoShrinkingText>
       </div>
        <div className='keyArea'>
         <div className='input-keys'>
