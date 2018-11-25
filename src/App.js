@@ -8,7 +8,7 @@ import './App.css';
 
 // Component for shrinking the display Value
 
-class AutoShrinkingText extends Component {
+class AutoShrinkingText extends React.Component {
   state = {
     scale: 1
   };
@@ -37,7 +37,7 @@ const {scale} = this.state
 
 return (
   <div
-    // className='auto-scaling-text'
+    className='auto-scaling-text'
     style={{ transform: `scale(${scale},${scale})`}}
     ref={node => this.node = node}       
     >{this.props.children}
@@ -162,7 +162,9 @@ const {displayValue} = this.state
     return (
       <div className='calculator'>
       {/* <pre>{JSON.stringify(this.state, null, 2)}</pre> */}
-      <div className='display'><AutoShrinkingText value={displayValue}/></div>
+      <div className='parent'>
+      <AutoShrinkingText >{displayValue}</AutoShrinkingText>
+      </div>
        <div className='keyArea'>
         <div className='input-keys'>
 
