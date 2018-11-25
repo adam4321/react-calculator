@@ -153,7 +153,7 @@ if (value == null) {
  })
 }
 
-// Render the UI
+// Render the Calculator
 
   render() {
 
@@ -161,10 +161,10 @@ const {displayValue} = this.state
 
     return (
       <div className='calculator'>
-      {/* <pre>{JSON.stringify(this.state, null, 2)}</pre> */}
-      <div className='parent'>
-      <AutoShrinkingText >{displayValue}</AutoShrinkingText>
-      </div>
+      <pre>{JSON.stringify(this.state, null, 2)}</pre>
+      {/* <div className='display'> */}
+      <AutoShrinkingText  >{displayValue}</AutoShrinkingText>
+      {/* </div> */}
        <div className='keyArea'>
         <div className='input-keys'>
 

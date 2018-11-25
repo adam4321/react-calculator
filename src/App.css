@@ -6,6 +6,10 @@ html {
   box-sizing: border-box;
 }
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   background: rgba(190, 192, 84, 0.247);
   margin: 0;
@@ -40,7 +44,7 @@ box-shadow: 0px 0px 20px 0px rgb(56, 55, 55);
 
 
 
-/* .display {
+.display {
   margin:auto;
   height:6.2vw;
   background-color: black;
@@ -49,7 +53,7 @@ box-shadow: 0px 0px 20px 0px rgb(56, 55, 55);
   font-size: 5vw;
   padding-right:1.5vw;
   padding-top:.5vw;
-} */
+}
 
 .auto-scaling-text {
   color: azure;
