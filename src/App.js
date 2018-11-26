@@ -8,7 +8,7 @@ import './App.css';
 
 // Component for shrinking the display Value
 
-class AutoShrinkingText extends React.Component {
+class AutoShrinkingText extends Component {
   state = {
     scale: 1
   };
