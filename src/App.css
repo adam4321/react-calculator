@@ -1,9 +1,9 @@
 
-
-/* Overall styling */
-
 html {
   box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
@@ -30,37 +30,36 @@ button:active {
 }
 
 .calculator {
-margin:auto;
+margin:0 auto;
 width:20.3vw;
 margin-top:10vw;
 box-shadow: 0px 0px 20px 0px rgb(56, 55, 55);
 }
 
+
 /* The Calculator */
-
-
 
 .display {
   margin:auto;
   height:6.2vw;
-  
+  width:20.3vw;
   background-color: black;
   color: azure;
-  text-align: right;
   font-size: 5vw;
-  padding-right:1.5vw;
+  /* padding-right:3.5vw; */
   padding-top:.5vw;
+  
+}
+
+.display .auto-scaling-text {
+  padding: 0 1.3vw;
+  position: absolute;
+  right: 40vw;
+  transform-origin: right;
 }
 
 .auto-scaling-text {
-/* margin:auto; */
-  /* height:6.2vw; */
-  /* background-color: black; */
-  /* color: azure; */
-  /* text-align: right; */
-  /* font-size: 5vw; */
-  /* padding-right:1.5vw; */
-  /* padding-top:.5vw; */
+  display: inline-block;
 } 
 
 .key{
@@ -93,6 +92,7 @@ box-shadow: 0px 0px 20px 0px rgb(56, 55, 55);
 .key-dig {
   background-color:rgb(214, 211, 211);
 }
+
 
 /* Key positioning */
 
@@ -152,7 +152,7 @@ box-shadow: 0px 0px 20px 0px rgb(56, 55, 55);
 
 @media only screen and (max-width:900px) {
   .calculator {
-    margin:auto;
+    margin:0 auto;
     width:60.9vw;
     margin-top:3vw;
     box-shadow: 0px 0px 20px 0px rgb(56, 55, 55);
@@ -160,13 +160,23 @@ box-shadow: 0px 0px 20px 0px rgb(56, 55, 55);
     .display {
       margin:auto;
       height:15vw;
+      width:60.9vw;
       background-color: black;
       color: azure;
       text-align: right;
-      font-size: 12vw;
-      padding-right:1.5vw;
-      padding-top:.5vw;
+      font-size: 11vw;
+      /* padding-right:1.5vw; */
+      padding-top:.8vw;
     }
+    .display .auto-scaling-text {
+      padding: 0 1.3vw;
+      position: absolute;
+      right: 20vw;
+      transform-origin: right;
+    }
+    .auto-scaling-text {
+      display: inline-block;
+    } 
     .key{
       width:15vw;
       height:12.4vw;
