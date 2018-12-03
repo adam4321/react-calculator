@@ -2,7 +2,7 @@
   "name": "react-calculator",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://adamjwright.com/react-calculator",
+  "homepage": "https://adamjwright.com/react_calculator",
   "dependencies": {
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
