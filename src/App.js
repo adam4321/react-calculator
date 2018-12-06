@@ -186,6 +186,7 @@ if (value == null) {
 const {displayValue} = this.state
 
     return (
+      <div>
       <div className='calculator'>
       {/* <pre>{JSON.stringify(this.state, null, 2)}</pre> */}
       
@@ -217,6 +218,8 @@ const {displayValue} = this.state
           
        </div>
       </div>
+      </div>
+      <a id='back-button' onClick={() => window.history.back()}>Back</a>
      </div>
     );
   }
