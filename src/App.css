@@ -150,11 +150,54 @@ box-shadow: 0px 0px 20px 0px rgb(56, 55, 55);
   grid-row:5;
 }
 
+#back-button {
+  width:8vw;
+  height:2.2vw;
+  background-color:#04536d;
+  position:absolute;
+  left:46vw;
+  margin-top:4vw;
+  border-radius: 11px;
+  font-family:verdana;
+  padding-top: .5vw;
+  box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
+}
+a{
+  text-decoration: none;
+  text-align: center;
+  display:inline-block;
+  color:gold;
+  font-size:1.1vw;
+}
+
+ a {
+  -webkit-transition: 0.4s;
+  -moz-transition:  0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  text-decoration: none;
+}
+a:hover {
+  cursor: pointer;
+  color: rgba(154, 182, 196, 0.582);
+  opacity:0.7;
+  -webkit-transition: 0.4s;
+  -moz-transition:  0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+.darken{
+  width:210px;
+  height:115px;
+  margin-left:-40px;
+}
+
+
 @media only screen and (max-width:900px) {
   .calculator {
     margin:0 auto;
     width:60.9vw;
-    margin-top:3vw;
+    margin-top:15vw;
     box-shadow: 0px 0px 20px 0px rgb(56, 55, 55);
     }
     .display {
@@ -192,47 +235,16 @@ box-shadow: 0px 0px 20px 0px rgb(56, 55, 55);
       grid-gap:.3vw;
       background-color:black;
     }
+  #back-button {
+  width:40vw;
+  height:10vw;
+  left:30vw;
+  margin-top:15vw;
+  border-radius: 11px;
+  font-size:5vw;
+  font-weight: 500;
+  padding-top: 2vw;
+  box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
+ }
 }
 
-#back-button {
-  width:8vw;
-  height:2.2vw;
-  background-color:#04536d;
-  position:absolute;
-  left:46vw;
-  margin-top:4vw;
-  border-radius: 11px;
-  font-family:verdana;
-  padding-top: .5vw;
-  box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
-}
-a{
-  text-decoration: none;
-  text-align: center;
-  display:inline-block;
-  color:gold;
-  font-size:1.1vw;
-}
-a:hover{
- }
- a {
-  -webkit-transition: 0.4s;
-  -moz-transition:  0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
-  text-decoration: none;
-}
-a:hover {
-  cursor: pointer;
-  color: rgba(154, 182, 196, 0.582);
-  opacity:0.7;
-  -webkit-transition: 0.4s;
-  -moz-transition:  0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
-}
-.darken{
-  width:210px;
-  height:115px;
-  margin-left:-40px;
-}
