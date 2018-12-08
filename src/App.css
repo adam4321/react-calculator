@@ -80,17 +80,17 @@ box-shadow: 0px 0px 20px 0px rgb(56, 55, 55);
 }
 
 .key-oper {
-  background-color:rgb(235, 140, 0);
+  background-color:rgb(16, 142, 245);
   color:azure;
 }
 
 .key-func {
-  background-color: rgba(167, 166, 166, 0.884);
+  background-color: rgba(219, 203, 203, 0.884);
   
 }
 
 .key-dig {
-  background-color:rgb(214, 211, 211);
+  background-color:rgb(240, 235, 235);
 }
 
 
