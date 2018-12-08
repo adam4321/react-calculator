@@ -1,5 +1,5 @@
 
-![img](https://i.imgur.com/pnZ2zCC.png)
+![img](https://i.imgur.com/IHKRgap.png)
 
 
 This is a mobile responsive calculator built in React  
