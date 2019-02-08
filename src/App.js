@@ -1,21 +1,20 @@
 
 //ts-check
 
-// Imports
 
 import React, { Component } from 'react';
 import './App.css';
 
-// Component for shrinking the display Value
+// Component for scaling the display as the digits
+// become to large to fit at full size
 
 class AutoShrinkingText extends Component {
   state = {
     scale: 1
   };
-componentDidUpdate() {
   
+componentDidUpdate() {
 const {scale} = this.state
-
 const node = this.node
 const parentNode = node.parentNode
 const availableWidth = parentNode.offsetWidth
@@ -56,6 +55,7 @@ class CalculatorDisplay extends React.Component {
     })
     
     // Add back missing .0 in e.g. 12.0
+
     const match = value.match(/\.\d*?(0*)$/)
     
     if (match)
@@ -135,7 +135,7 @@ this.setState({
  })
 }
 
-// Percent Sign
+// Percent Symbol
 
 percent() {
   const {displayValue} = this.state
@@ -147,7 +147,6 @@ percent() {
 }
 
 performOperation(nextOperator) {
-
 const {displayValue, operator, value} = this.state
 const nextValue = parseFloat(displayValue)
 
@@ -164,6 +163,7 @@ if (value == null) {
   this.setState({
   value:nextValue
   })
+
 } else if (operator) {
    const currentValue = value || 0
    const computedValue = operations[operator](currentValue, nextValue)
