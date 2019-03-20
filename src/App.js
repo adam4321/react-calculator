@@ -1,11 +1,9 @@
-
-//ts-check
-
+// @ts-check
 
 import React, { Component } from 'react';
 import './App.css';
 
-// Component for scaling the display as the digits
+// component for scaling the display as the digits
 // become to large to fit at full size
 
 class AutoShrinkingText extends Component {
@@ -54,7 +52,7 @@ class CalculatorDisplay extends React.Component {
       maximumFractionDigits: 6
     })
     
-    // Add back missing .0 in e.g. 12.0
+    // add back missing .0 in e.g. 12.0
 
     const match = value.match(/\.\d*?(0*)$/)
     
@@ -71,7 +69,7 @@ class CalculatorDisplay extends React.Component {
   }
 }
 
-// Beginning of the Calculator
+// beginning of the calculator component
 
 class App extends Component {
 
@@ -82,7 +80,7 @@ state = {
   operator:null
 }
 
-// Clear the display
+// clear the display
 
 displayClear() {
   this.setState({
@@ -90,7 +88,7 @@ displayClear() {
   })
 }
 
-// Attach numbers to the the display
+// attach numbers to the the display
 
 inputDigit(digit) {
   const {displayValue, waitingForOperand} = this.state
@@ -107,7 +105,7 @@ this.setState({
  }
 }
 
-// Allow a decimal point
+// allow a decimal point
 
 inputDot() {
   const {displayValue, waitingForOperand} = this.state
@@ -125,7 +123,7 @@ inputDot() {
  }
 }
 
-// Change the number's sign
+// change the number's sign
 
 changeSign() {
   const {displayValue} = this.state
@@ -135,7 +133,7 @@ this.setState({
  })
 }
 
-// Percent Symbol
+// percent symbol
 
 percent() {
   const {displayValue} = this.state
@@ -179,7 +177,7 @@ if (value == null) {
  })
 }
 
-// Render the Calculator
+// render the calculator
 
   render() {
 
