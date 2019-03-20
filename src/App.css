@@ -37,7 +37,7 @@ box-shadow: 0px 0px 20px 0px rgb(56, 55, 55);
 }
 
 
-/* The Calculator Body */
+/* calculator body */
 
 .display {
   margin:auto;
@@ -90,7 +90,7 @@ box-shadow: 0px 0px 20px 0px rgb(56, 55, 55);
   background-color:rgb(240, 235, 235);
 }
 
-/* Key positioning */
+/* calculator key positioning with css grid */
 
 .key-divide{
   grid-column:4;
@@ -200,7 +200,7 @@ a:hover {
   margin-left:-40px;
 }
 
-/* Media Query */
+/* media query */
 
 @media only screen and (max-width:900px) {
   .calculator {
