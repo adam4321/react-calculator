@@ -3,8 +3,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
-// component for scaling the display as the digits
-// become to large to fit at full size
+//  component for scaling the display as the digits
+//  become to large to fit at full size
 
 class AutoShrinkingText extends Component {
   state = {
