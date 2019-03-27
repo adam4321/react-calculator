@@ -12,42 +12,41 @@ class AutoShrinkingText extends Component {
     scale: 1
   };
   
-componentDidUpdate() {
-const {scale} = this.state
-const node = this.node
-const parentNode = node.parentNode
-const availableWidth = parentNode.offsetWidth
-const actualWidth = node.offsetWidth
-const actualScale = availableWidth / actualWidth
-
-if (scale === actualScale) 
-    return
-
-  if (actualScale < 1) {
-    this.setState ({scale: actualScale})
-  } 
-  else if (scale < 1) {
-    this.setState({scale: 1})
-  }
-}
-
-render() {
+  componentDidUpdate() {
   const {scale} = this.state
+  const node = this.node
+  const parentNode = node.parentNode
+  const availableWidth = parentNode.offsetWidth
+  const actualWidth = node.offsetWidth
+  const actualScale = availableWidth / actualWidth
 
-  return (
-    <div
-      className='auto-scaling-text'
-      style={{ transform: `scale(${scale},${scale})`}}
-      ref={node => this.node = node}       
-    >{this.props.children}</div>
-  )
- }
+  if (scale === actualScale) 
+      return
+
+    if (actualScale < 1) {
+      this.setState ({scale: actualScale})
+    } 
+    else if (scale < 1) {
+      this.setState({scale: 1})
+    }
+  }
+
+  render() {
+    const {scale} = this.state
+
+    return (
+      <div
+        className='auto-scaling-text'
+        style={{ transform: `scale(${scale},${scale})`}}
+        ref={node => this.node = node}       
+      >{this.props.children}</div>
+    )
+  }
 }
 
 class CalculatorDisplay extends React.Component {
   render() {
     const { value, ...props } = this.props
-    
     const language = navigator.language || 'en-US'
     let formattedValue = parseFloat(value).toLocaleString(language, {
       useGrouping: true,
@@ -192,8 +191,8 @@ const {displayValue} = this.state
       {/* <pre>{JSON.stringify(this.state, null, 2)}</pre> */}
       
       <CalculatorDisplay value={displayValue}/>
-       <div className='keyArea'>
-        <div className='input-keys'>
+        <div className='keyArea'>
+          <div className='input-keys'>
 
             <button className='key key-func key-clear' onClick={() => this.displayClear()}>AC</button>
             <button className='key key-func key-sign' onClick={() => this.changeSign()}>&plusmn;</button>
@@ -217,8 +216,8 @@ const {displayValue} = this.state
             <button className='key key-oper key-plus' onClick={() => this.performOperation('+')}>+</button>
             <button className='key key-oper key-equals' onClick={() => this.performOperation('=')}>=</button>   
           
-       </div>
-      </div>
+          </div>
+        </div>
       </div>
       <a id='back-button' onClick={() => window.history.back()}>Back</a>
      </div>
