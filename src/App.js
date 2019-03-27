@@ -1,10 +1,11 @@
+
 // @ts-check
 
 import React, { Component } from 'react';
 import './App.css';
 
-//  component for scaling the display as the digits
-//  become to large to fit at full size
+//  Component for scaling the display as the 
+//  digits become to large to fit at full size
 
 class AutoShrinkingText extends Component {
   state = {
@@ -22,21 +23,22 @@ const actualScale = availableWidth / actualWidth
 if (scale === actualScale) 
     return
 
-if (actualScale < 1) {
+  if (actualScale < 1) {
     this.setState ({scale: actualScale})
-  } else if (scale < 1) {
+  } 
+  else if (scale < 1) {
     this.setState({scale: 1})
   }
 }
 
-  render() {
-const {scale} = this.state
+render() {
+  const {scale} = this.state
 
-return (
-  <div
-    className='auto-scaling-text'
-    style={{ transform: `scale(${scale},${scale})`}}
-    ref={node => this.node = node}       
+  return (
+    <div
+      className='auto-scaling-text'
+      style={{ transform: `scale(${scale},${scale})`}}
+      ref={node => this.node = node}       
     >{this.props.children}</div>
   )
  }
@@ -52,7 +54,7 @@ class CalculatorDisplay extends React.Component {
       maximumFractionDigits: 6
     })
     
-    // add back missing .0 in e.g. 12.0
+    // Add back missing .0 in e.g. 12.0
 
     const match = value.match(/\.\d*?(0*)$/)
     
@@ -69,7 +71,7 @@ class CalculatorDisplay extends React.Component {
   }
 }
 
-// beginning of the calculator component
+// Beginning of the calculator component
 
 class App extends Component {
 
@@ -80,7 +82,7 @@ state = {
   operator:null
 }
 
-// clear the display
+// Clear the display
 
 displayClear() {
   this.setState({
@@ -88,42 +90,44 @@ displayClear() {
   })
 }
 
-// attach numbers to the the display
+// Attach numbers to the the display
 
 inputDigit(digit) {
   const {displayValue, waitingForOperand} = this.state
 
   if (waitingForOperand) {
     this.setState({
-    displayValue: String(digit),
-    waitingForOperand:false
+      displayValue: String(digit),
+      waitingForOperand:false
     })
-  } else {
-this.setState({
- displayValue : displayValue === '0' ? String(digit) : displayValue + digit
-  })
- }
+  } 
+  else {
+    this.setState({
+      displayValue : displayValue === '0' ? String(digit) : displayValue + digit
+    })
+  }
 }
 
-// allow a decimal point
+// Allow a decimal point
 
 inputDot() {
   const {displayValue, waitingForOperand} = this.state
 
   if (waitingForOperand) {
     this.setState({
-    displayValue: '.',
-    waitingForOperand:false
+      displayValue: '.',
+      waitingForOperand:false
     })
-  } else if (displayValue.indexOf('.') === -1) {
-  this.setState({
-    displayValue: displayValue + '.',
-    waitingForOperand:false
-  })
- }
+  } 
+  else if (displayValue.indexOf('.') === -1) {
+    this.setState({
+      displayValue: displayValue + '.',
+      waitingForOperand:false
+    })
+  }
 }
 
-// change the number's sign
+// Change the number's sign
 
 changeSign() {
   const {displayValue} = this.state
@@ -133,7 +137,7 @@ this.setState({
  })
 }
 
-// percent symbol
+// Percent symbol
 
 percent() {
   const {displayValue} = this.state
@@ -148,36 +152,35 @@ performOperation(nextOperator) {
 const {displayValue, operator, value} = this.state
 const nextValue = parseFloat(displayValue)
 
-const operations = {
-  '/': (prevValue, nextValue) => prevValue / nextValue,
-  '*': (prevValue, nextValue) => prevValue * nextValue,
-  '-': (prevValue, nextValue) => prevValue - nextValue,
-  '+': (prevValue, nextValue) => prevValue + nextValue,
-  '=': (prevValue, nextValue) => nextValue
-  
-}
+  const operations = {
+    '/': (prevValue, nextValue) => prevValue / nextValue,
+    '*': (prevValue, nextValue) => prevValue * nextValue,
+    '-': (prevValue, nextValue) => prevValue - nextValue,
+    '+': (prevValue, nextValue) => prevValue + nextValue,
+    '=': (prevValue, nextValue) => nextValue
+  }
 
-if (value == null) {
+  if (value == null) {
+    this.setState({
+      value:nextValue
+    })
+  } 
+  else if (operator) {
+    const currentValue = value || 0
+    const computedValue = operations[operator](currentValue, nextValue)
+    
+    this.setState({
+      value: computedValue,
+      displayValue: String(computedValue)
+    })
+  }
   this.setState({
-  value:nextValue
+    waitingForOperand: true,
+    operator:nextOperator
   })
-
-} else if (operator) {
-   const currentValue = value || 0
-   const computedValue = operations[operator](currentValue, nextValue)
-  
-   this.setState({
-     value: computedValue,
-     displayValue: String(computedValue)
-   })
- }
- this.setState({
-  waitingForOperand: true,
-  operator:nextOperator
- })
 }
 
-// render the calculator
+// Render the calculator
 
   render() {
 
