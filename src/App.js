@@ -16,6 +16,7 @@ class AutoShrinkingText extends Component {
   const {scale} = this.state
   const node = this.node
   const parentNode = node.parentNode
+  // @ts-ignore
   const availableWidth = parentNode.offsetWidth
   const actualWidth = node.offsetWidth
   const actualScale = availableWidth / actualWidth
@@ -219,7 +220,7 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <a id='back-button' onClick={() => window.history.back()}>Back</a>
+        <button id='back-button' onClick={() => window.history.back()}>Back</button>
        </div>
       );
   }
