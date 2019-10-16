@@ -42,9 +42,9 @@ class AutoShrinkingText extends Component {
 
         return (
             <div
-                className = "auto-scaling-text"
-                style = {{transform: `scale(${scale},${scale})`}}
-                ref = {node => (this.node = node)}
+                className="auto-scaling-text"
+                style={{transform: `scale(${scale},${scale})`}}
+                ref={node => (this.node = node)}
             >
                 {this.props.children}
             </div>
@@ -89,7 +89,12 @@ class App extends Component {
 
     // Clear the display
     displayClear() {
-        this.setState({displayValue: '0'});
+        this.setState({
+            value: null,
+            displayValue: '0',
+            waitingForOperand: false,
+            operator: null
+        });
     }
 
     // Attach numbers to the the display
@@ -172,39 +177,39 @@ class App extends Component {
 
         return (
             <div>
-                <div className = "calculator">
+                <div className="calculator">
                     
                     {/* <pre>{JSON.stringify(this.state, null, 2)}</pre> */}
 
-                    <CalculatorDisplay value = {displayValue} />
-                    <div className = "keyArea">
-                        <div className = "input-keys">
-                            <button className = "key key-func key-clear" onClick = {() => this.displayClear()}> AC </button>
-                            <button className = "key key-func key-sign" onClick = {() => this.changeSign()}> &plusmn; </button>
-                            <button className = "key key-func key-percent" onClick = {() => this.percent()}> % </button>
+                    <CalculatorDisplay value={displayValue} />
+                    <div className="keyArea">
+                        <div className="input-keys">
+                            <button className="key key-func key-clear" onClick={() => this.displayClear()}> AC </button>
+                            <button className="key key-func key-sign" onClick={() => this.changeSign()}> &plusmn; </button>
+                            <button className="key key-func key-percent" onClick = {() => this.percent()}> % </button>
 
-                            <button className  ="key key-dig key-0" onClick = {() => this.inputDigit(0)}> 0 </button>
-                            <button className = "key key-dig key-dot" onClick = {() => this.inputDot()}> . </button>
+                            <button className="key key-dig key-0" onClick={() => this.inputDigit(0)}> 0 </button>
+                            <button className="key key-dig key-dot" onClick={() => this.inputDot()}> . </button>
                             
-                            <button className = "key key-dig key-1" onClick = {() => this.inputDigit(1)}> 1 </button>
-                            <button className = "key key-dig key-2" onClick = {() => this.inputDigit(2)}> 2 </button>
-                            <button className = "key key-dig key-3" onClick = {() => this.inputDigit(3)}> 3 </button>
-                            <button className = "key key-dig key-4" onClick = {() => this.inputDigit(4)}> 4 </button>
-                            <button className = "key key-dig key-5" onClick = {() => this.inputDigit(5)}> 5 </button>
-                            <button className = "key key-dig key-6" onClick = {() => this.inputDigit(6)}> 6 </button>
-                            <button className = "key key-dig key-7" onClick = {() => this.inputDigit(7)}> 7 </button>
-                            <button className = "key key-dig key-8" onClick = {() => this.inputDigit(8)}> 8 </button>
-                            <button className = "key key-dig key-9" onClick = {() => this.inputDigit(9)}> 9 </button>
+                            <button className="key key-dig key-1" onClick={() => this.inputDigit(1)}> 1 </button>
+                            <button className="key key-dig key-2" onClick={() => this.inputDigit(2)}> 2 </button>
+                            <button className="key key-dig key-3" onClick={() => this.inputDigit(3)}> 3 </button>
+                            <button className="key key-dig key-4" onClick={() => this.inputDigit(4)}> 4 </button>
+                            <button className="key key-dig key-5" onClick={() => this.inputDigit(5)}> 5 </button>
+                            <button className="key key-dig key-6" onClick={() => this.inputDigit(6)}> 6 </button>
+                            <button className="key key-dig key-7" onClick={() => this.inputDigit(7)}> 7 </button>
+                            <button className="key key-dig key-8" onClick={() => this.inputDigit(8)}> 8 </button>
+                            <button className="key key-dig key-9" onClick={() => this.inputDigit(9)}> 9 </button>
 
-                            <button className = "key key-oper key-divide" onClick = {() => this.performOperation('/')}> &#247; </button>
-                            <button className = "key key-oper key-multiply" onClick = {() => this.performOperation('*')}> x </button>
-                            <button className = "key key-oper key-minus" onClick = {() => this.performOperation('-')}> &minus; </button>
-                            <button className = "key key-oper key-plus" onClick = {() => this.performOperation('+')}> + </button>
-                            <button className = "key key-oper key-equals" onClick = {() => this.performOperation('=')}> = </button>
+                            <button className="key key-oper key-divide" onClick={() => this.performOperation('/')}> &#247; </button>
+                            <button className="key key-oper key-multiply" onClick={() => this.performOperation('*')}> x </button>
+                            <button className="key key-oper key-minus" onClick={() => this.performOperation('-')}> &minus; </button>
+                            <button className="key key-oper key-plus" onClick={() => this.performOperation('+')}> + </button>
+                            <button className="key key-oper key-equals" onClick={() => this.performOperation('=')}> = </button>
                         </div>
                     </div>
                 </div>
-                <button id = "back-button" onClick = {() => window.history.back()}> Back </button>
+                <button id="back-button" onClick={() => window.history.back()}> Back </button>
             </div>
         );
     }
