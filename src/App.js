@@ -102,7 +102,8 @@ class App extends Component {
         });
     }
 
-    // Render the calculator
+    
+    /* Render the calculator ----------------------------------------------- */
     render() {
         const {displayValue} = this.state;
 
