@@ -109,6 +109,18 @@ class App extends Component {
 
         return (
             <div>
+                {/* Github source code link ------------------------------- */}
+                <div id='gh-bar'>
+                    <a
+                        id='gh-link'
+                        href='https://github.com/adam4321/react-calculator'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                    >
+                        <div>Open GitHub repo in a new tab</div>
+                    </a>
+                </div>
+
                 <div className="calculator">
                     
                     {/* <pre>{JSON.stringify(this.state, null, 2)}</pre> */}
