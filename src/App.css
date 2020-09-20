@@ -62,6 +62,7 @@ button:active {
 
 .display {
     margin: auto;
+    position: relative;
     height: 119px;
     width: 390px;
     background-color: black;
@@ -71,9 +72,9 @@ button:active {
 }
 
 .display .auto-scaling-text {
-    padding: 0 1.3vw;
+    padding: 0 11px 0 58px;
     position: absolute;
-    right: 40vw;
+    right: 10px;
     transform-origin: right;
 }
 
@@ -239,7 +240,7 @@ a:hover {
     .calculator {
         margin: 0 auto;
         width: 60.9vw;
-        margin-top: 15vw;
+        margin-top: 60px;
         box-shadow: 0px 0px 20px 0px rgb(56, 55, 55);
     }
 
@@ -255,9 +256,9 @@ a:hover {
     }
 
     .display .auto-scaling-text {
-        padding: 0 1.3vw;
+        padding: 0 2vw 0 9vw;
         position: absolute;
-        right: 20vw;
+        right: 22vw;
         transform-origin: right;
     }
 
@@ -285,19 +286,17 @@ a:hover {
     }
 
     #gh-bar {
-        height: 80px;
-        font-size: 30px;
+        font-size: 18px;
     }
 
     #back-button {
-        width: 40vw;
-        height: 10vw;
-        left: 30vw;
-        margin-top: 15vw;
+        width: 130px;
+        height: 40px;
+        margin: 60px auto 0px auto;
         border-radius: 11px;
-        font-size: 5vw;
+        font-size: 21px;
         font-weight: 500;
-        padding-top: 2vw;
+        padding-top: 3px;
         box-shadow: 1px 3.5px 3px 0px rgb(27, 26, 26);
     }
 }
