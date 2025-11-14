@@ -4,10 +4,10 @@
   "private": true,
   "homepage": "https://adamjwright.com/react_calculator",
   "dependencies": {
-    "js-yaml": "^3.14.1",
+    "js-yaml": "^4.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "^4.0.1"
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
